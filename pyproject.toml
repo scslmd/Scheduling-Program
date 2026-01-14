@@ -1,0 +1,31 @@
+[project]
+name = "scheduling-program"
+version = "0.1.0"
+description = "Thin-slice scheduling prototype"
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+  "fastapi>=0.111.0",
+  "or-tools>=9.10.4067",
+  "pydantic>=2.7.0",
+  "uvicorn>=0.30.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+  "httpx>=0.27.0",
+  "ruff>=0.4.0",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+addopts = "-q"
